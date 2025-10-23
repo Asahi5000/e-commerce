@@ -195,19 +195,45 @@ body {
 /*---------------------------------------------------- */
 
 .input-group {
-    top: 180px;
-    position: absolute;
-    width: 315px;
+    position: relative; 
+    width: 100%;       
     transition: 0.5s;
+    margin-top: 30px;  
 }
 
-#login {
-    margin-top: 65px;
-    left: 50px;
-}
-
+#login,
 #register {
-    margin-top: 65px;
-    left: 450px;
+    margin-top: 0;
+    left: auto;
 }
 
+@media (max-width: 480px) {
+    .wrapper {
+        width: 100%;
+        max-width: 90%;
+        padding: 25px 20px;
+    }
+
+    .input-group {
+        width: 100%;
+        margin-top: 20px;
+        position: relative;
+    }
+
+    .input-box {
+        margin: 20px 0;
+    }
+
+    .input-box input {
+        width: 100%;
+        font-size: 14px;
+        height: 42px;
+    }
+
+    .btn,
+    .login-btn {
+        width: 100%;
+        font-size: 14px;
+        height: 42px;
+    }
+}
