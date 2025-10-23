@@ -185,11 +185,17 @@ footer img {
         object-position: center;
         height: 50vh; /* keep full screen height on mobile */
     }
+    .container-bg {
+    height: 50vh;
+    }
 }
 
 @media (max-width: 480px) {
     .bg-image {
         object-position: center;
         height: 50vh;
+    }
+    .container-bg {
+    height: 50vh;
     }
 }
