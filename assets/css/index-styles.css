@@ -183,13 +183,13 @@ footer img {
 @media (max-width: 768px) {
     .bg-image {
         object-position: center;
-        height: 100vh; /* keep full screen height on mobile */
+        height: 50vh; /* keep full screen height on mobile */
     }
 }
 
 @media (max-width: 480px) {
     .bg-image {
         object-position: center;
-        height: 100vh;
+        height: 50vh;
     }
 }
