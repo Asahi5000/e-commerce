@@ -216,5 +216,11 @@ body {
     .input-box input {
         width: auto;
     }
+    .input-box i {
+        right: 0px;
+    }
+    .btn1 {
+        width: auto;
+    }
 }
 
