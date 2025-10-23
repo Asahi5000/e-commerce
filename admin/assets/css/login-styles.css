@@ -156,7 +156,8 @@ body {
     font-size: 16px;   
     cursor: pointer;  
     transition: 0.8s;
-    position: relative;
+    position: absolute;
+    right: 20px;
     overflow: hidden;
 }
 
