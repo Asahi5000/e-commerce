@@ -348,19 +348,26 @@ $fuels = $conn->query("SELECT DISTINCT fuel_type FROM cars ORDER BY fuel_type")-
                 <li><span class="icon">📍</span> <?= htmlspecialchars($admin['address']) ?></li>
             </ul>
 
-            <?php
-            // Set correct folder path for profile images
-            $imagePath = "admin/assets/uploads/user/";
+<?php
+// Browser-accessible URL (used in <img src>)
+$imageURL = "admin/assets/uploads/user/";
 
-            // Check if admin has profile image, otherwise use default.png
-            $profileImage = (!empty($admin['profile_image']) && file_exists($imagePath . $admin['profile_image']))
-            ? $admin['profile_image']: "default.png";
-            ?>
+// Server filesystem path (used for file_exists check)
+$imagePath = $_SERVER['DOCUMENT_ROOT'] . "/admin/assets/uploads/user/";
 
-            <div class="contact-image">
-                <img src="<?= $imagePath . htmlspecialchars($profileImage) ?>" 
-                alt="<?= htmlspecialchars($admin['name']) ?>">
-            </div>
+// Check if admin has a profile image, otherwise use default
+$profileImage = (!empty($admin['profile_image']) && file_exists($imagePath . $admin['profile_image']))
+    ? $admin['profile_image']
+    : "default.png";
+?>
+
+<div class="contact-image">
+    <img src="<?= $imageURL . htmlspecialchars($profileImage) ?>?v=<?= time(); ?>"
+         alt="<?= htmlspecialchars($admin['name']) ?>"
+         style="width:100px; height:100px; border-radius:50%; object-fit:cover;">
+</div>
+
+
         </div>
 
     </div>
