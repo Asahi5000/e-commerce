@@ -224,9 +224,11 @@ body {
 
   .input-box input,
   .btn {
+    width: 100%;
     font-size: 14px;
     height: 42px;
   }
+}
 }
 
 
