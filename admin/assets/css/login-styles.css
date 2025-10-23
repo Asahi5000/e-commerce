@@ -88,6 +88,7 @@ body {
     border-radius: 10px;
     padding: 30px 40px;
     overflow: hidden;
+    display: flex;
 }
 
 
@@ -218,18 +219,18 @@ body {
 
 @media (max-width: 480px) {
   .wrapper {
-    max-width: 95%;
-    padding: 25px 10px;
+    max-width: 90%;
+    padding: 30px 15px;
   }
 
   .input-box input,
   .btn {
-    width: 50%;
+    width: 100%;        
     font-size: 14px;
     height: 42px;
   }
 }
-}
+
 
 
 
