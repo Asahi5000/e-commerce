@@ -318,9 +318,8 @@ $fuels = $conn->query("SELECT DISTINCT fuel_type FROM cars ORDER BY fuel_type")-
 <!-- Contact Section -->
 <section class="contact-section" id="contact-section">
             <!-- Background Video -->
-        <video autoplay loop muted plays-inline class="contact-bg">
-            <source src="videos/white-bg.mp4" type="video/mp4">
-        </video>
+<img src="images/contact-bg.jpg" alt="Background" class="contact-image">
+
 
     <div class="contact-container">
 
