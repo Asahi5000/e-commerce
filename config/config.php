@@ -1,15 +1,16 @@
 <?php
-// config/config.php
-
-$host = "localhost";   // XAMPP default
-$db   = "car_ecommerce"; // change to your database name
-$user = "root";        // default XAMPP user
-$pass = "";            // default has no password
+$host = 'db.fr-par1.bengt.wasmernet.com';
+$port = 10272;
+$dbname = 'car_ecommerce';
+$username = '9ef7aec87d4a8000ccdb856df051';
+$password = 'YOUR_DB_PASSWORD_HERE'; // Replace this with the actual password
 
 try {
-    $conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $username, $password, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    ]);
+    echo "✅ Database connection successful!";
 } catch (PDOException $e) {
-    die("Database connection failed: " . $e->getMessage());
+    echo "❌ Database connection failed: " . $e->getMessage();
 }
 ?>
