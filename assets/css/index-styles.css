@@ -208,4 +208,7 @@ footer img {
     .container-bg {
     height: 30vh;
     }
+    .navbar {
+        height:30px;
+    }
 }
