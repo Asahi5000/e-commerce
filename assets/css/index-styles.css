@@ -195,9 +195,12 @@ footer img {
         height: 50vh; /* keep full screen height on mobile */
     }
     .container-bg {
-    height: 40vh;
+        height: 40vh;
     }
+    header {
+        height: 80px;
 
+    }
 }
 
 @media (max-width: 480px) {
@@ -206,10 +209,10 @@ footer img {
         height: 30vh;
     }
     .container-bg {
-    height: 30vh;
+        height: 30vh;
     }
     header {
-    height: 70px;
+        height: 70px;
 
     }
 }
