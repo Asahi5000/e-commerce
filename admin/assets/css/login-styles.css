@@ -212,8 +212,10 @@ body {
 }
 
 @media (max-width: 480px) {
-    .wrapper {
-        padding: 15px 20px;
-    }
+.input-group {
+    top: 120px;
+    position: flex;
+}
+    
 }
 
