@@ -15,7 +15,7 @@ unset($_SESSION['error']);
     <link rel="stylesheet" href="../admin/assets/css/login-styles.css">
     <link rel="stylesheet" href="../admin/assets/css/index-modal.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-     <link rel="icon" href="admin/assets/library/images/logo.png" />
+     <link rel="icon" href="/admin/assets/library/images/logo.png" />
 </head>
 
 <body>
