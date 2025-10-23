@@ -217,10 +217,9 @@ body {
 
 
 @media (max-width: 480px) {
-
-
-  .input-box {
-    margin: 15px 0;
+  .wrapper {
+    max-width: 90%;
+    padding: 30px 15px;
   }
 
   .input-box input,
