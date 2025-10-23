@@ -88,7 +88,6 @@ body {
     border-radius: 10px;
     padding: 30px 40px;
     overflow: hidden;
-    display: flex;
 }
 
 
@@ -103,25 +102,23 @@ body {
 }
 
 .wrapper .input-box {
-  position: relative;
-  width: 100%;
-  height: 50px;
-  margin: 20px 0;
-  box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
 }
 
 .input-box input {
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 40px;
-  font-size: 16px;
-  color: #fff;
-  padding: 12px 45px 12px 20px;
-  box-sizing: border-box; /* ✅ prevents overflow from border/padding */
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
 }
 
 .input-box input::placeholder {
@@ -150,21 +147,17 @@ body {
     font-weight: 600;
 }
 /*---------------------------------------------------- */
-/* Button */
 .btn {
-  width: 100%;
-  max-width: 100%;
-  height: 45px;
-  border-radius: 40px;
-  border: 3px solid #bba31b;
-  background: none;
-  font-size: 16px;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box; /* ✅ important */
+    width: 100%;
+    height: 45px;
+    border-radius: 40px;
+    border: 3px solid #bba31b;
+    background: none;
+    font-size: 16px;   
+    cursor: pointer;  
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
 }
 
  .btn1 {
@@ -202,8 +195,10 @@ body {
 /*---------------------------------------------------- */
 
 .input-group {
-  width: 315px;
-  transition: 0.5s;
+    top: 180px;
+    position: absolute;
+    width: 315px;
+    transition: 0.5s;
 }
 
 #login {
@@ -215,22 +210,4 @@ body {
     margin-top: 65px;
     left: 450px;
 }
-
-
-@media (max-width: 480px) {
-  .wrapper {
-    max-width: 90%;
-    padding: 30px 15px;
-  }
-
-  .input-box input,
-  .btn {
-    width: 100%;        
-    font-size: 14px;
-    height: 42px;
-  }
-}
-
-
-
 
