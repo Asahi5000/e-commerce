@@ -1,0 +1,253 @@
+/* ============================= */
+/* Dropdown Modal Base Styles     */
+/* ============================= */
+
+/* Overlay */
+.dropdown-modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  inset: 0; /* top/right/bottom/left = 0 */
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.6); /* semi-transparent black overlay */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Modal Content Box */
+.dropdown-modal-content {
+  position: relative;
+  background: #1a1a1a; /* deep black background */
+  color: #ffd700;       /* gold text */
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+/* Large / small modal variations */
+.dropdown-modal-content.large { max-width: 900px; }
+.dropdown-modal-content.small { max-width: 420px; }
+
+/* ============================= */
+/* Close Button                   */
+/* ============================= */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  background: transparent;
+  border: none;
+  color: #ffd700;
+  cursor: pointer;
+  z-index: 10001;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #fff;
+}
+
+/* ============================= */
+/* Form Elements                  */
+/* ============================= */
+form#profileForm {
+  margin-top: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #ffd700;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ffd700;
+  background: #333;
+  color: #ffd700;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  margin-bottom: 10px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border-color: #fff;
+  background: #222;
+}
+
+/* ============================= */
+/* Profile Image Preview          */
+/* ============================= */
+.profile-preview {
+  display: block;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 2px solid #ffd700;
+}
+
+/* ============================= */
+/* Buttons                        */
+/* ============================= */
+button[type="submit"] {
+  background: #ffd700;
+  color: #1a1a1a;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background: #e6c200;
+}
+
+/* Optional remove photo button */
+.btn-remove-photo {
+  background: #e74c3c;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.btn-remove-photo:hover {
+  background: #c0392b;
+}
+
+/* ============================= */
+/* Scrollbar styling for modal    */
+/* ============================= */
+.dropdown-modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dropdown-modal-content::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.dropdown-modal-content::-webkit-scrollbar-thumb {
+  background: #ffd700;
+  border-radius: 4px;
+}
+
+
+/* ============================= */
+/* Logout Modal Styles (logout.php) */
+/* ============================= */
+
+/* Overlay */
+.logout-modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto;
+  transition: opacity 0.3s ease;
+}
+
+/* Modal Active (Visible) */
+.logout-modal[data-open="true"] {
+  display: flex;
+  animation: fadeIn 0.25s ease;
+}
+
+/* ============================= */
+/* Fade-in animation */
+.dropdown-modal[data-open="true"] {
+  animation: fadeIn 0.2s ease;
+  display: flex;
+}
+
+/* Button Base Styles */
+.btn-logout,
+.btn-cancel {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Logout Button */
+.btn-logout {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+}
+
+.btn-logout:hover {
+  background: linear-gradient(135deg, #ff6659, #d63031);
+  box-shadow: 0 6px 14px rgba(231, 76, 60, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Cancel Button */
+.btn-cancel {
+  background: #f3f4f6;
+  color: #374151;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cancel:hover {
+  background: #e5e7eb;
+  color: #111827;
+  transform: translateY(-2px);
+}
+
+/* Add subtle spacing */
+.btn-logout + .btn-cancel {
+  margin-left: 10px;
+}
+
+/* Optional: responsive center alignment for modal or container */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+

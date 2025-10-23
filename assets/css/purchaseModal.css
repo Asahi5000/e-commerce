@@ -1,0 +1,133 @@
+/* Background overlay */
+.purchase-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Modal box */
+.purchase-content {
+  background: #0f0f0f;
+  color: #f1c40f;
+  border: 2px solid #f1c40f;
+  border-radius: 15px;
+  padding: 25px 30px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 0 20px rgba(241, 196, 15, 0.4);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  color: #f1c40f;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.modal-close:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+/* Header */
+#purchaseTitle {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #f1c40f;
+  text-align: center;
+}
+.modal-info {
+  color: #d9d9d9;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Customer info box */
+.customer-info {
+  background: #1b1b1b;
+  border: 1px solid #f1c40f;
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin-bottom: 18px;
+  color: #f1c40f;
+  font-size: 14px;
+}
+
+/* Form styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.form-group label {
+  color: #f1c40f;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.form-group input {
+  padding: 10px 12px;
+  background: #1c1c1c;
+  border: 1px solid #f1c40f;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+.form-group input:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 6px #f1c40f;
+}
+
+/* Row for CVV + expiry */
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+/* Button */
+.btn-pay {
+  width: 100%;
+  background: linear-gradient(135deg, #f1c40f, #b8860b);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+.btn-pay:hover {
+  background: linear-gradient(135deg, #ffd700, #f1c40f);
+  transform: scale(1.05);
+}
+
+/* Payment status text */
+.payment-status {
+  margin-top: 15px;
+  text-align: center;
+  color: #f1c40f;
+  font-weight: bold;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.95);}
+  to {opacity: 1; transform: scale(1);}
+}

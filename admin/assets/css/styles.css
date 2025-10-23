@@ -1,0 +1,611 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --sidebar-bg: #181818;
+    --sidebar-text: #ffffff;
+    --sidebar-hover-bg: #333333;
+    --sidebar-active-bg: #bba31b;
+    --sidebar-ul-li-a-color: #f1f5f9; 
+    --header-h1-color: #1e293b;
+    --header-p-color: #64748b;
+    --user-info-color: #bba31b;
+    --card-color: #fff;
+    --card-dark-bg: #bba31b;
+    --card-small-color: #64748b;
+    --card-dark-small-color: #e0e7ff;
+    --section-bg: #fff;
+    --section-h3-color: #1e293b;
+    --categories-circle-bg: #bba31b;
+    --categories-color: #fff;
+    --categories-text-color: #475569;
+    --upload-btn-bg: #bba31b;
+    --upload-btn-text: #fff;
+    --upload-btn-hover-bg: #a38f18;
+
+    /* Dark Mode Variables */
+    --dark-body-bg: #161616; 
+    --dark-bg: #272a2e; 
+    --dark-text: #e5e7eb;   
+    --dark-card-bg: #3d4249;
+    --dark-card-color: #f3f4f6;
+    --dark-section-bg: #3d4249;
+    --dark-section-text: #e5e7eb;
+    --dark-user-info-text: #e5e7eb;
+    --dark-user-menu-bg: #3d4249;
+    --dark-user-menu-hover-bg: #52575e;
+    --dark-user-menu-text: #e5e7eb;
+    --dark-user-menu-email: #9ca3af;
+    --dark-user-settings-bg: #3d4249;
+    --dark-user-settings-label: #e5e7eb;
+    --dark-settings-input-bg: #52575e;
+    --dark-profile-border: #bba31b;
+    --dark-modal-box-bg: #3d4249;
+    --dark-modal-box-text: #e5e7eb;
+
+    /* Product Board Specific */
+      /* Search Bar */
+      --dark-search-bg: #52575e;
+      --dark-search-text: #f3f4f6;
+      --dark-search-placeholder: #9ca3af;
+
+      /* Filter Categories & transmission */
+      --dark-filter-cat-trans-bg: #52575e;
+      --dark-filter-cat-trans-text: #f3f4f6;
+
+      --dark-board-bg: #3d4249;
+      --dark-board-text: #e5e7eb;
+      --dark-even-row-bg: #3b3d3f;
+      --dark-odd-row-bg: #484a4d;
+
+    /* Car Modal Specific */
+      --dark-carModal-bg: #3d4249;
+      --dark-carModal-text: #e5e7eb;
+      --dark-carmodal-label-color: #f3f4f6;
+      --dark-carmodal-input-bg: #52575e;
+      --dark-carmodal-h2-color: #f3f4f6;
+      --dark-carmodal-form-select-bg: #52575e;
+      --dark-carmodal-form-select-color: #f3f4f6;
+      --dark-carmodal-discription-bg: #52575e;
+      --dark-carmodal-discription-color: #f3f4f6;
+}
+
+body {
+  display: flex;
+  background: #f4f6fa;
+  color: #333;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Prevent FOUC (flash of unstyled content) */
+html {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 20px;
+  z-index: 1000; /* Always on top */
+}
+
+.sidebar.hidden {
+  display: none;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto 20px; /* centers it above login form */
+}
+
+.logo img {
+    width: 110px;
+    height: auto;
+    display: block;
+}
+
+.sidebar h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 8px 0;
+}
+
+.sidebar ul li i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  vertical-align: center;
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 12px 16px;
+  color: var(--sidebar-ul-li-a-color);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background: var(--sidebar-hover-bg);
+  color: var(--sidebar-text)
+}
+
+.sidebar ul li.active a {
+  background: var(--sidebar-active-bg);
+  color: var(--sidebar-text);
+  font-weight: 600;
+}
+
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: var(--header-h1-color);
+}
+
+header p {
+  font-size: 0.9rem;
+  color: var(--header-p-color);
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.header-text {
+  flex: 1;
+  margin-left: 10px;
+}
+
+/* User Info Section */
+.user-info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.user-info:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--user-info-color);
+  object-fit: cover;
+}
+
+.user-info span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--header-h1-color);
+}
+
+/* User Menu (Dropdown) */
+.user-menu {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  min-width: 220px;
+  padding: 12px 0;
+  display: none;
+  flex-direction: column;
+  animation: fadeDown 0.3s ease forwards;
+  z-index: 1000;
+}
+
+/* Smooth Fade & Slide Animation */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* User Menu Links */
+.user-menu a {
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s ease, padding-left 0.2s ease;
+}
+
+.user-menu a:hover {
+  background: #f5f5f5;
+  padding-left: 20px;
+}
+
+/* Divider */
+.user-menu hr {
+  margin: 8px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+/* Profile Info Inside Dropdown */
+.user-menu .profile-info {
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.user-menu .profile-info strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #111;
+}
+
+
+
+
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.card {
+  background: var(--card-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, background 0.3s, color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card.dark {
+  background: linear-gradient(135deg, var(--card-dark-bg), #2b323d);
+  color: var(--card-color);
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin: 6px 0;
+}
+
+.card small {
+  font-size: 0.8rem;
+  color: var(--card-small-color);
+}
+
+.card.dark small {
+  color: var(--card-dark-small-color)
+}
+
+/* Bottom Section */
+.bottom-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.categories {
+  background: var(--section-bg);
+  height: 100%;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: background 0.3s, color 0.3s;
+}
+
+.categories h3 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: var(--section-h3-color);
+}
+
+/* Categories Widget */
+.categories .circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--categories-circle-bg);
+  color: var(--categories-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.categories ul {
+  list-style: none;
+  text-align: center;
+}
+
+.categories ul li {
+  padding: 5px 0;
+  font-size: 0.95rem;
+  color: var(--categories-text-color);
+}
+
+
+
+.gtr-image {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+
+/* Make sure .categories has relative positioning */
+.categories {
+  position: relative;
+  overflow: hidden; /* keeps image contained if needed */
+}
+
+
+
+
+
+
+/* Dark Mode */
+
+html.dark-mode,
+html.dark-mode body {
+  background-color: var(--dark-bg);
+  color: var(--dark-text)
+}
+
+html {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+html.dark-mode header h1,
+html.dark-mode header p,
+html.dark-mode .performance h3,
+html.dark-mode .categories h3,
+html.dark-mode .hamburger{
+  color: var(--dark-text);
+}
+
+html.dark-mode .card.dark {
+  background: linear-gradient(95deg, var(--card-dark-bg), #2b323d);
+  color: var(--card-color);
+}
+
+html.dark-mode .card {
+  background: var(--dark-card-bg);
+  color: var(--dark-card-color);
+  box-shadow: none;
+}
+
+html.dark-mode .performance,
+html.dark-mode .categories {
+  background: var(--dark-section-bg);
+  color: var(--dark-section-text);
+  box-shadow: none;
+}
+
+html.dark-mode .user-info span {
+  color: var(--dark-user-info-text);
+}
+
+html.dark-mode .user-menu {
+  background: var(--dark-user-menu-bg);
+  color: var(--dark-user-menu-text);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+html.dark-mode .user-menu a,
+html.dark-mode .user-menu strong {
+  color: var(--dark-user-menu-text);
+}
+
+html.dark-mode .user-menu a:hover {
+  background: var(--dark-user-menu-hover-bg);
+}
+
+html.dark-mode .user-menu small {
+  color: var(--dark-user-menu-email);
+}
+
+html.dark-mode .settings-section {
+  background: var(--dark-user-settings-bg);
+}
+
+html.dark-mode .settings-section img {
+  border: 3px solid var(--dark-profile-border);
+}
+
+html.dark-mode .settings-form label {
+  color: var(--dark-user-settings-label);
+}
+
+html.dark-mode .settings-form input,
+html.dark-mode .settings-form textarea {
+  background: var(--dark-settings-input-bg);
+  color: var(--dark-text);
+  border: 1px solid #374151;
+}
+
+html.dark-mode .settings-form input::placeholder,
+html.dark-mode .settings-form textarea::placeholder {
+  color: #9ca3af;
+}
+
+html.dark-mode .settings-form input:focus,
+html.dark-mode .settings-form textarea:focus {
+  border-color: var(--sidebar-active-bg);
+  box-shadow: 0 0 0 2px rgba(187, 163, 27, 0.3);
+}
+
+html.dark-mode .modal-box {
+  background: var(--dark-modal-box-bg);
+  color: var(--dark-modal-box-text);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+/* Product Board Specific */
+html.dark-mode .search-filter input {
+  background: var(--dark-search-bg);
+  color: var(--dark-search-text);
+}
+html.dark-mode .search-filter input::placeholder {
+  color: var(--dark-search-placeholder);
+}
+
+html.dark-mode .search-filter select {
+  background: var(--dark-filter-cat-trans-bg);
+  color: var(--dark-filter-cat-trans-text);
+
+}
+
+html.dark-mode .board {
+  background: var(--dark-board-bg);
+  color: var(--dark-board-text);
+}
+
+/* Zebra striping */
+html.dark-mode .table tbody tr:nth-child(even) {
+    background: var(--dark-even-row-bg);
+}
+html.dark-mode .table tbody tr:nth-child(odd) {
+    background: var(--dark-odd-row-bg);
+}
+
+/* Car Modal */
+html.dark-mode .modal-content {
+  background: var(--dark-carModal-bg);
+  color: var(--dark-carModal-text);
+}
+html.dark-mode .modal-content label {
+  color: var(--dark-carmodal-label-color);
+}
+
+html.dark-mode .modal-content input {
+  background: var(--dark-carmodal-input-bg);
+  color: var(--dark-carmodal-h2-color);
+}
+
+html.dark-mode .modal-content .form-select {
+  background: var(--dark-carmodal-form-select-bg);
+  color: var(--dark-carmodal-form-select-color);
+}
+
+html.dark-mode .modal-content #description {
+  background: var(--dark-carmodal-discription-bg);
+  color: var(--dark-carmodal-discription-color);
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .bottom-section {
+    grid-template-columns: 1fr; /* stack earlier for tablets */
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bottom-section {
+    grid-template-columns: 1fr;
+  }
+    .cards {
+    grid-template-columns: 1fr; /* one column for small screens */
+  }
+  .user-info span {
+    display: none;
+  }
+  .sidebar {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }  
+  html.dark-mode .table tbody {
+    background: rgb(61, 66, 73);
+}
+  .gtr-image {
+    display: none;  /* hide image on small screens */
+  }
+}
+

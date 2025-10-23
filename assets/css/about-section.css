@@ -1,0 +1,123 @@
+/* About Section Layout */
+.about-section {
+  background: #303030;
+  color: #fff;
+  padding: 60px 20px;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 50px 2fr;
+  gap: 40px;
+  align-items: start;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+
+aside h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #e6c300; /* gold accent */
+  letter-spacing: 1px;
+}
+
+aside p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ddd;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+/* Timeline */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #f5c518;
+}
+
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  background: #333;
+  border: 2px solid #f5c518;
+  border-radius: 50%;
+  margin: 40px 0;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  z-index: 2;
+}
+
+.timeline-dot:hover {
+  background: #f5c518;
+  transform: scale(1.1);
+}
+
+.timeline-dot.active {
+  background: #f5c518;
+}
+
+/* Content */
+.about-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.about-content h3 {
+  color: #f5c518;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;   /* fixed max width */
+  height: 250px;      /* fixed height */
+  object-fit: cover;  /* keeps proportion, crops overflow */
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .timeline-line {
+    display: none;
+  }
+
+  .timeline-dot {
+    margin: 0 15px;
+  }
+
+  .about-image img {
+    max-width: 100%;
+    height: 200px; /* smaller fixed height for mobile */
+  }
+}

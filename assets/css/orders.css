@@ -1,0 +1,208 @@
+/* === Base Modal Layout === */
+.dropdown-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* === Modal Content (Gold Theme) === */
+.dropdown-modal-content.gold-theme {
+  background: linear-gradient(145deg, #111, #1a1a1a);
+  border: 2px solid #d4af37;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+  color: #f7f7f7;
+  width: 480px;
+  max-width: 95%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 25px;
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+  transition: all 0.3s ease;
+}
+
+/* === Close Button === */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  color: #d4af37;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.close-btn:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+/* === Title === */
+.dropdown-modal-content h2 {
+  text-align: center;
+  color: #d4af37;
+  border-bottom: 1px solid #d4af37;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  font-size: 1.6rem;
+}
+
+/* === Order Card Styling === */
+.order-card {
+  background: #111;
+  border: 1px solid #d4af37;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+  position: relative;
+  transition: all 0.3s ease;
+}
+.order-card:hover {
+  background: rgba(212, 175, 55, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* === Header Info === */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.order-header h3 {
+  color: #d4af37;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* === Status Badge === */
+.order-status {
+  background: linear-gradient(90deg, #d4af37, #b8860b);
+  color: #111;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-transform: capitalize;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+/* === Delete Button === */
+.delete-btn {
+  background: linear-gradient(90deg, #ff5555, #cc0000);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute; /* Fixed position within the order card */
+  bottom: 10px;
+  right: 15px;
+  box-shadow: 0 0 8px rgba(255, 85, 85, 0.3);
+}
+
+.delete-btn:hover {
+  background: linear-gradient(90deg, #cc0000, #990000);
+  box-shadow: 0 0 12px rgba(255, 85, 85, 0.6);
+  transform: scale(1.05);
+}
+
+/* === Info Text (loading, empty, etc.) === */
+.loading-text,
+.empty-text,
+.error-text {
+  text-align: center;
+  color: #d4af37;
+  font-size: 1rem;
+  margin: 20px 0;
+}
+
+/* === Scrollbar (Gold Accent) === */
+.dropdown-modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+.dropdown-modal-content::-webkit-scrollbar-thumb {
+  background-color: #d4af37;
+  border-radius: 3px;
+}
+.dropdown-modal-content::-webkit-scrollbar-track {
+  background: #222;
+}
+
+/* === Animation === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* === RESPONSIVENESS === */
+
+/* Medium devices (tablets) */
+@media (max-width: 768px) {
+  .dropdown-modal-content.gold-theme {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .order-header h3 {
+    font-size: 1rem;
+  }
+
+  .order-status, .delete-btn {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
+
+/* Small devices (phones) */
+@media (max-width: 480px) {
+  .dropdown-modal-content.gold-theme {
+    width: 100%;
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .order-status, .delete-btn {
+    position: static;
+    transform: none;
+    margin-top: 6px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .delete-btn {
+    position: static;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+
+  .dropdown-modal-content h2 {
+    font-size: 1.4rem;
+  }
+}

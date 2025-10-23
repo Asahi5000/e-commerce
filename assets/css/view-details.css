@@ -1,0 +1,209 @@
+/* -------------------------------
+   Modal Overlay
+--------------------------------*/
+.view-details-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+    padding: 1rem;
+    backdrop-filter: blur(4px);
+    overflow-y: auto; /* allow scrolling if content too tall */
+}
+
+.view-details-modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+/* -------------------------------
+   Modal Content
+--------------------------------*/
+.view-details-content {
+    background: #fff;
+    border-radius: 16px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh; /* vertical scroll if needed */
+    overflow-y: auto;  /* vertical scroll */
+    overflow-x: hidden; /* remove horizontal scrollbar */
+    transform: scale(0.95);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    position: relative;
+    box-sizing: border-box; /* include padding in width */
+}
+.view-details-content * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.view-details-modal.show .view-details-content {
+    transform: scale(1);
+    opacity: 1;
+}
+/* -------------------------------
+   Close Button
+--------------------------------*/
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    color: #444;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* -------------------------------
+   Modal Image
+--------------------------------*/
+.modal-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+
+/* -------------------------------
+   Modal Body
+--------------------------------*/
+.modal-body {
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.modal-subtitle {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.modal-price {
+    font-size: 1.6rem;
+    color: #e63946; /* luxurious red accent */
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+/* -------------------------------
+   Modal Detail Values
+--------------------------------*/
+.modal-detail {
+    font-size: 1rem;
+    color: #1a1a1a;        /* darker text for value */
+    background: #f8f9fa;   /* light card background */
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    margin-bottom: 0.8rem;
+    font-weight: 600;      /* emphasize the value */
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.modal-detail:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+}
+/* -------------------------------
+   Modal Description Value
+--------------------------------*/
+.modal-description {
+    font-size: 1rem;
+    color: #333;           /* dark grey for description text */
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+}
+
+/* Optional: make purchase button text bold and standout */
+.purchase-btn {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 1.15rem;
+    text-transform: uppercase;
+}
+
+/* -------------------------------
+   Purchase Button
+--------------------------------*/
+.purchase-btn {
+    display: block;
+    width: 100%;
+    padding: 0.9rem;
+    background: linear-gradient(135deg, #f9d342, #c7a82d);
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.purchase-btn:hover {
+    background: linear-gradient(135deg,  #e0c03c, #ad9327);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* -------------------------------
+   Responsive Design
+--------------------------------*/
+@media (max-width: 768px) {
+    .view-details-content {
+        max-width: 95%;
+    }
+    .modal-image {
+        height: 220px;
+    }
+    .modal-title {
+        font-size: 1.9rem;
+    }
+    .modal-price {
+        font-size: 1.4rem;
+    }
+    .modal-body {
+        padding: 1.5rem 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-image {
+        height: 180px;
+    }
+    .modal-title {
+        font-size: 1.6rem;
+    }
+    .modal-price {
+        font-size: 1.2rem;
+    }
+    .modal-body {
+        padding: 1rem 1.2rem;
+    }
+    .purchase-btn {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+}

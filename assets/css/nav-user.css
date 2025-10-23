@@ -1,0 +1,249 @@
+/* ===========================
+   NAVBAR BASE
+=========================== */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* logo left / links+auth right */
+  align-items: center;
+  padding: 12px 24px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+/* Reset lists */
+.nav-links,
+.nav-auth {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* ===========================
+   NAV LINKS
+=========================== */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* space between nav links and user/login */
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: gold;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: white;
+}
+
+/* ===========================
+   LOGIN BUTTON
+=========================== */
+.nav-auth .login-btn {
+  color: gold;
+  padding: 8px 15px;
+  border: 1px solid gold;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-auth .login-btn:hover {
+  background: gold;
+  color: #111;
+}
+
+/* ===========================
+   USER DROPDOWN
+=========================== */
+.nav-user-dropdown {
+  position: relative;
+}
+
+.user-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  color: gold;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.user-toggle:hover {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid gold;
+}
+
+.user-name {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.arrow-down {
+  border: solid gold;
+  border-width: 0 2px 2px 0;
+  padding: 3px;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #111;
+  border: 1px solid gold;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  animation: fadeIn 0.3s ease;
+  margin: 0;        /* remove spacing */
+  padding: 0;       /* remove spacing */
+  list-style: none; /* remove bullet */
+  overflow: hidden; /* clean corners */
+  z-index: 2000;
+}
+
+.dropdown-menu li {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #333;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu li a {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  color: #f1f1f1;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background: gold;
+  color: #111;
+}
+
+.nav-user-dropdown.open .dropdown-menu {
+  display: flex;
+}
+
+.nav-user-dropdown.open .arrow-down {
+  transform: rotate(-135deg);
+}
+
+/* ===========================
+   RESPONSIVE NAV
+=========================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: gold;
+  border-radius: 2px;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .nav-right {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-end;   /* align items to the right */
+    width: 220px;            /* fixed width for slide-in */
+    background: rgba(17, 17, 17, 0.95);
+    padding: 15px;
+    gap: 15px;
+    display: none;
+    border-radius: 8px 0 0 8px;
+    transform: translateX(100%); /* start off-screen */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-right.active {
+    display: flex;
+    transform: translateX(0); /* slide into view */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    align-items: flex-end; /* right-align */
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: right;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  .nav-auth {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* keep login/user aligned right */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .user-name {
+    display: inline; /* show user name on small screens */
+    font-size: 14px;
+  }
+}
+
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,194 @@
+/* =========================
+   CUSTOMER CARDS STYLING
+   THEME: GOLD (#bba31b)
+   ========================= */
+
+/* Container Layout */
+.customer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual Card */
+.customer-card {
+  background-color: var(--card-color);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: default;
+  border-top: 4px solid var(--upload-btn-bg);
+}
+
+/* Hover effect */
+.customer-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  border-top-color: var(--upload-btn-hover-bg);
+}
+
+/* Profile Image */
+.customer-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 3px solid var(--upload-btn-bg);
+  transition: 0.3s ease;
+}
+
+.customer-card img:hover {
+  transform: scale(1.05);
+  border-color: var(--upload-btn-hover-bg);
+}
+
+/* Customer Name */
+.customer-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+  color: var(--upload-btn-bg);
+  font-weight: 600;
+}
+
+/* Text Information */
+.customer-card p {
+  font-size: 0.95rem;
+  margin: 5px 0;
+  color: var(--header-p-color);
+  line-height: 1.4;
+}
+
+.customer-card p strong {
+  color: var(--upload-btn-bg);
+}
+
+/* Joined Date */
+.customer-card small {
+  display: block;
+  margin-top: 10px;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* No Customers Message */
+.no-customers {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--header-p-color);
+  margin: 40px 0;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+/* Large screens (desktops) */
+@media (min-width: 1025px) {
+  .customer-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .customer-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .customer-card {
+    padding: 18px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .customer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .customer-card {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .customer-card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .customer-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .customer-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Very Small Phones */
+@media (max-width: 480px) {
+  .customer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-card {
+    padding: 14px;
+  }
+
+  .customer-card img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .customer-card h3 {
+    font-size: 1rem;
+  }
+}
+
+/* =========================
+   DARK MODE SUPPORT
+   ========================= */
+html.dark-mode .customer-card {
+  background-color: var(--dark-card-bg);
+  color: var(--dark-card-color);
+  border-top-color: var(--upload-btn-bg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+html.dark-mode .customer-card:hover {
+  background-color: var(--dark-section-bg);
+  border-top-color: var(--upload-btn-hover-bg);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+html.dark-mode .customer-card img {
+  border-color: var(--upload-btn-bg);
+}
+
+html.dark-mode .customer-card img:hover {
+  border-color: var(--upload-btn-hover-bg);
+}
+
+html.dark-mode .customer-card h3 {
+  color: var(--upload-btn-bg);
+}
+
+html.dark-mode .customer-card p {
+  color: var(--dark-section-text);
+}
+
+html.dark-mode .customer-card p strong {
+  color: var(--upload-btn-bg);
+}
+
+html.dark-mode .customer-card small {
+  color: var(--dark-user-menu-email);
+}
+
+html.dark-mode .no-customers {
+  color: var(--dark-section-text);
+}
