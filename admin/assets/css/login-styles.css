@@ -216,6 +216,8 @@ body {
     top: 160px;
     width: auto;
     position: absolute;
+    padding-left: 10px;
+    padding-right: 15px;
 }
     
 }
