@@ -46,7 +46,7 @@ include __DIR__ . '/../resources/helpers/P.fetch-categories.php';
         <header>
             <button class="hamburger" onclick="toggleSidebar()">☰</button>
             <div class="header-text">
-                <h1>Welcome back, <?php echo $username; ?>!</h1>
+                <h1>Welcome back, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
                 <p>Here are your product list!</p>
             </div>
 
