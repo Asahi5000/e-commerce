@@ -209,16 +209,5 @@ body {
     left: 450px;
 }
 
-@media (max-width: 480px) {
-.input-group {
-    align-items: center;
-    top: 160px;
-    width: auto;
-    position: none;
-    right: 30px;
-    transform: translateY(0%);
-    font-size: 20px;
-}
-    
-}
+
 
