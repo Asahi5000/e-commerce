@@ -110,17 +110,16 @@ body {
 }
 
 .input-box input {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: 50px;
   background: transparent;
-  border: none;
-  outline: none;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
   font-size: 16px;
   color: #fff;
   padding: 12px 45px 12px 20px;
-  box-sizing: border-box; /* ✅ prevents overflow from border/padding */
+  box-sizing: border-box;
 }
 
 .input-box input::placeholder {
@@ -151,8 +150,8 @@ body {
 /*---------------------------------------------------- */
 /* Button */
 .btn {
+  display: block;
   width: 100%;
-  max-width: 100%;
   height: 45px;
   border-radius: 40px;
   border: 3px solid #bba31b;
@@ -161,9 +160,8 @@ body {
   color: #fff;
   cursor: pointer;
   transition: 0.3s ease;
-  position: relative;
   overflow: hidden;
-  box-sizing: border-box; /* ✅ important */
+  box-sizing: border-box;
 }
 
  .btn1 {
@@ -220,10 +218,6 @@ body {
   .wrapper {
     max-width: 100%;
     padding: 0 10px;
-  }
-
-  .input-box {
-    margin: 15px 0;
   }
 
   .input-box input,
