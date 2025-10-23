@@ -109,7 +109,7 @@ $fuels = $conn->query("SELECT DISTINCT fuel_type FROM cars ORDER BY fuel_type")-
 <section id="home-section">
     <div class="container-bg">
         <!-- Background Video -->
-<img src="images/indexbg.png" alt="Background" class="bg-image">
+<!--<img src="images/indexbg.png" alt="Background" class="bg-image">-->
 
 
 
@@ -318,7 +318,7 @@ $fuels = $conn->query("SELECT DISTINCT fuel_type FROM cars ORDER BY fuel_type")-
 <!-- Contact Section -->
 <section class="contact-section" id="contact-section">
             <!-- Background Video -->
-<img src="images/contact-bg2.jpg" alt="Background" class="contact-image">
+<!--<img src="images/contact-bg2.jpg" alt="Background" class="contact-image">-->
 
 
     <div class="contact-container">
