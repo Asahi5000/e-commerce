@@ -213,6 +213,7 @@ body {
 
 @media (max-width: 480px) {
 .input-group {
+    align-items: center;
     top: 160px;
     width: auto;
     position: absolute;
