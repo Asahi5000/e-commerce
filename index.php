@@ -109,9 +109,9 @@ $fuels = $conn->query("SELECT DISTINCT fuel_type FROM cars ORDER BY fuel_type")-
 <section id="home-section">
     <div class="container-bg">
         <!-- Background Video -->
-<!--<img src="images/indexbg.png" alt="Background" class="bg-image">-->
-
-
+        <video autoplay loop muted plays-inline class="bg-video">
+            <source src="videos/lambo-bg.mp4" type="video/mp4">
+        </video>
 
         <header>
 
@@ -318,8 +318,9 @@ $fuels = $conn->query("SELECT DISTINCT fuel_type FROM cars ORDER BY fuel_type")-
 <!-- Contact Section -->
 <section class="contact-section" id="contact-section">
             <!-- Background Video -->
-<!--<img src="images/contact-bg2.jpg" alt="Background" class="contact-image">-->
-
+        <video autoplay loop muted plays-inline class="contact-bg">
+            <source src="videos/white-bg.mp4" type="video/mp4">
+        </video>
 
     <div class="contact-container">
 
@@ -344,25 +345,19 @@ $fuels = $conn->query("SELECT DISTINCT fuel_type FROM cars ORDER BY fuel_type")-
                 <li><span class="icon">📍</span> <?= htmlspecialchars($admin['address']) ?></li>
             </ul>
 
-<?php
-// Browser-accessible URL (used in <img src>)
-$imageURL = "admin/assets/uploads/user/";
+            <?php
+            // Set correct folder path for profile images
+            $imagePath = "admin/assets/uploads/user/";
 
-// Server filesystem path (used for file_exists check)
-$imagePath = $_SERVER['DOCUMENT_ROOT'] . "/admin/assets/uploads/user/";
+            // Check if admin has profile image, otherwise use default.png
+            $profileImage = (!empty($admin['profile_image']) && file_exists($imagePath . $admin['profile_image']))
+            ? $admin['profile_image']: "default.png";
+            ?>
 
-// Check if admin has a profile image, otherwise use default
-$profileImage = (!empty($admin['profile_image']) && file_exists($imagePath . $admin['profile_image']))
-    ? $admin['profile_image']
-    : "default.png";
-?>
-
-<div class="contact-image">
-    <img src="<?= $imageURL . htmlspecialchars($profileImage) ?>?v=<?= time(); ?>"
-         alt="<?= htmlspecialchars($admin['name']) ?>">
-</div>
-
-
+            <div class="contact-image">
+                <img src="<?= $imagePath . htmlspecialchars($profileImage) ?>" 
+                alt="<?= htmlspecialchars($admin['name']) ?>">
+            </div>
         </div>
 
     </div>
