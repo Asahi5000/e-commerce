@@ -179,7 +179,16 @@ footer img {
     width: 100px;
     margin-bottom: 10px;
 }
+@media (max-width: 946px) {
+    .bg-image {
+        object-position: center;
+        height: 50vh; /* keep full screen height on mobile */
+    }
+    .container-bg {
+    height: 50vh;
+    }
 
+}
 @media (max-width: 768px) {
     .bg-image {
         object-position: center;
@@ -188,9 +197,7 @@ footer img {
     .container-bg {
     height: 50vh;
     }
-      body {
-    zoom: 0.9; /* Slightly shrink everything visually */
-  }
+
 }
 
 @media (max-width: 480px) {
