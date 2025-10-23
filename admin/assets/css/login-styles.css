@@ -216,8 +216,9 @@ body {
     top: 160px;
     width: auto;
     position: absolute;
-    padding-left: 10px;
-    padding-right: 15px;
+    right: 20px;
+    transform: translateY(0%);
+    font-size: 20px;
 }
     
 }
