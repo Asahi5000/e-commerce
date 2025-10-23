@@ -214,6 +214,7 @@ body {
 @media (max-width: 480px) {
 .input-group {
     top: 160px;
+    width: 100px;
     position: absolute;
 }
     
