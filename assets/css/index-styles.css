@@ -193,9 +193,9 @@ footer img {
 @media (max-width: 480px) {
     .bg-image {
         object-position: center;
-        height: 50vh;
+        height: 30vh;
     }
     .container-bg {
-    height: 50vh;
+    height: 30vh;
     }
 }
