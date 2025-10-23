@@ -109,9 +109,11 @@ $fuels = $conn->query("SELECT DISTINCT fuel_type FROM cars ORDER BY fuel_type")-
 <section id="home-section">
     <div class="container-bg">
         <!-- Background Video -->
-        <video autoplay loop muted plays-inline class="bg-video">
-            <source src="videos/lambo-bg.mp4" type="video/mp4">
-        </video>
+<video autoplay loop muted playsinline class="bg-video">
+  <source src="videos/lambo-bg.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 
         <header>
 
