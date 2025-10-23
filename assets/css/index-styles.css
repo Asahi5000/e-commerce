@@ -58,8 +58,8 @@ nav ul li a {
 }
 
 
-.bg-video {
-    position: absolute;
+.bg-image {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
