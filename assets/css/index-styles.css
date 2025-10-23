@@ -213,6 +213,9 @@ footer img {
     }
     header {
         height: 70px;
-
+    }
+    nav .logo {
+        width: 50px;
+        height: auto;
     }
 }
