@@ -35,7 +35,7 @@ unset($_SESSION['error']);
                 <p>Login to access your admin panel</p>
             </div>
 
-            <form id="login" class="input-group" action="login-check.php" method="post">
+            <form id="login" class="input-group" action="admin/login-check.php" method="post">
                 <div class="input-box">
                     <input type="text" name="username" placeholder="username" required>
                     <i class='bx bxs-user'></i>
