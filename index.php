@@ -363,8 +363,7 @@ $profileImage = (!empty($admin['profile_image']) && file_exists($imagePath . $ad
 
 <div class="contact-image">
     <img src="<?= $imageURL . htmlspecialchars($profileImage) ?>?v=<?= time(); ?>"
-         alt="<?= htmlspecialchars($admin['name']) ?>"
-         style="width:100px; height:100px; border-radius:50%; object-fit:cover;">
+         alt="<?= htmlspecialchars($admin['name']) ?>">
 </div>
 
 
