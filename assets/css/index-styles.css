@@ -199,7 +199,10 @@ footer img {
     }
     header {
         height: 80px;
-
+    }
+    nav .logo {
+        width: 50px;
+        height: auto;
     }
 }
 
