@@ -195,10 +195,8 @@ body {
 /*---------------------------------------------------- */
 
 .input-group {
-    top: 180px;
-    position: absolute;
-    width: 315px;
-    transition: 0.5s;
+  width: 315px;
+  transition: 0.5s;
 }
 
 #login {
