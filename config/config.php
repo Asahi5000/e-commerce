@@ -1,5 +1,5 @@
 <?php
-$host = 'db.fr-par1.bengt.wasmernet.com';
+$host = 'db.fr-pari1.bengt.wasmernet.com';
 $port = 10272;
 $dbname = 'car_ecommerce';
 $username = '9ef7aec87d4a8000ccdb856df051';
