@@ -188,6 +188,9 @@ footer img {
     .container-bg {
     height: 50vh;
     }
+      body {
+    zoom: 0.9; /* Slightly shrink everything visually */
+  }
 }
 
 @media (max-width: 480px) {
