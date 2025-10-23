@@ -109,7 +109,7 @@ $fuels = $conn->query("SELECT DISTINCT fuel_type FROM cars ORDER BY fuel_type")-
 <section id="home-section">
     <div class="container-bg">
         <!-- Background Video -->
-<!--<img src="images/indexbg.png" alt="Background" class="bg-image">-->
+<img src="images/indexbg.png" alt="Background" class="bg-image">
 
 
 
