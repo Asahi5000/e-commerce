@@ -213,8 +213,8 @@ body {
 
 @media (max-width: 480px) {
 .input-group {
-    top: 120px;
-    position: flex;
+    top: 160px;
+    position: absolute;
 }
     
 }
