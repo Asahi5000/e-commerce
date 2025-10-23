@@ -30,6 +30,18 @@ html.dark-mode {
   --orders-btn-hover-text: #111;
 }
 
+/* ===== Sidebar ===== */
+.sidebar {
+    width: 250px;                 /* default sidebar width */
+    color: var(--sidebar-color);
+    transition: width 0.3s ease;  /* smooth toggle */
+    flex-shrink: 0;               /* don’t let it shrink */
+}
+
+/* Sidebar when collapsed */
+.sidebar.collapsed {
+    width: 70px; /* collapsed width */
+}
 /* === General Layout === */
 h2 {
   color: var(--orders-accent);
