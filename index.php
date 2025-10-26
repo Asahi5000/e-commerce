@@ -1,4 +1,11 @@
 <?php
+ob_start(); // Prevents "headers already sent" errors
+
+// ✅ Start session safely before any HTML
+if (session_status() === PHP_SESSION_NONE) {
+    session_name("customer_session");
+    session_start();
+    
 require_once "config/config.php";
     // Fetch Admin Info 
 include "assets/resources/helpers/fetch-admin-info.php";
