@@ -5,6 +5,7 @@ ob_start(); // Prevents "headers already sent" errors
 if (session_status() === PHP_SESSION_NONE) {
     session_name("customer_session");
     session_start();
+}
     
 require_once "config/config.php";
     // Fetch Admin Info 
