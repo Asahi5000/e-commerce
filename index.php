@@ -1,9 +1,4 @@
 <?php
-ob_start();
-
-if (session_status() === PHP_SESSION_NONE) {
-    session_name("customer_session");
-    session_start();
 require_once "config/config.php";
     // Fetch Admin Info 
 include "assets/resources/helpers/fetch-admin-info.php";
@@ -118,7 +113,7 @@ $fuels = $conn->query("SELECT DISTINCT fuel_type FROM cars ORDER BY fuel_type")-
 
 
 
-        <header>
+        <header><?php session_name("customer_session"); session_start();  ?>
 <nav class="navbar">
   <a href="#home-section">
     <img src="images/logo.png" alt="Logo" class="logo">
