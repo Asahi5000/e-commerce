@@ -58,7 +58,7 @@ nav ul li a {
 }
 
 
-.bg-image {
+.bg-video {
     position: absolute;
     top: 0;
     left: 0;
@@ -179,6 +179,7 @@ footer img {
     width: 100px;
     margin-bottom: 10px;
 }
+
 @media (max-width: 946px) {
     .bg-image {
         object-position: center;
@@ -190,7 +191,7 @@ footer img {
 
 }
 @media (max-width: 768px) {
-    .bg-image {
+    .bg-video {
         object-position: center;
         height: 50vh; /* keep full screen height on mobile */
     }
@@ -207,7 +208,7 @@ footer img {
 }
 
 @media (max-width: 480px) {
-    .bg-image {
+    .bg-video {
         object-position: center;
         height: 30vh;
     }
