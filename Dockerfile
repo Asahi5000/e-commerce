@@ -1,14 +1,23 @@
-# Use official PHP Apache image
+# Use the official PHP image with Apache
 FROM php:8.2-apache
 
-# Copy project files to web directory
+# Install system dependencies and PHP extensions
+RUN docker-php-ext-install pdo pdo_mysql mysqli
+
+# Enable Apache rewrite module
+RUN a2enmod rewrite
+
+# Copy project files into the container
 COPY . /var/www/html/
 
-# Expose port 10000 for Render
-EXPOSE 10000
+# Set working directory
+WORKDIR /var/www/html/
 
-# Change Apache port to match Render's expected port
-RUN sed -i 's/80/10000/' /etc/apache2/ports.conf /etc/apache2/sites-available/000-default.conf
+# Optional: set proper permissions
+RUN chown -R www-data:www-data /var/www/html
 
-# Enable Apache rewrite (useful for frameworks like Laravel)
-RUN a2enmod rewrite
+# Expose port 80
+EXPOSE 80
+
+# Start Apache
+CMD ["apache2-foreground"]
