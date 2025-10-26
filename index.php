@@ -114,7 +114,6 @@ $fuels = $conn->query("SELECT DISTINCT fuel_type FROM cars ORDER BY fuel_type")-
 
 
         <header>
-
 <?php session_name("customer_session"); session_start();  ?>
 <nav class="navbar">
   <a href="#home-section">
